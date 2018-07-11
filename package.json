@@ -1,0 +1,39 @@
+{
+  "name": "guestbook",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-preset-airbnb": "^2.5.1",
+    "babel-preset-react-native": "^4.0.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-watch": "^4.0.1",
+    "jest-expo": "~27.0.0",
+    "prettier": "1.13.7",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "lint": "esw",
+    "lint-watch": "esw -w --changed",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "eslint": "^5.1.0",
+    "expo": "^27.0.1",
+    "react": "16.3.1",
+    "react-native": "~0.55.2"
+  }
+}

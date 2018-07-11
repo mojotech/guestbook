@@ -1,0 +1,14 @@
+# Watchman
+.watchmanconfig
+
+# Node
+node_modules
+*.log
+.nvm
+/bots/node_modules/
+
+# OS X
+.DS_Store
+
+# Android
+!gradle-wrapper.jar
