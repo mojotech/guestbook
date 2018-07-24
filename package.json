@@ -12,27 +12,24 @@
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-watch": "^4.0.1",
-    "jest-expo": "~27.0.0",
+    "jest": "^23.4.1",
+    "jest-react-native": "^18.0.0",
     "prettier": "1.13.7",
-    "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
+    "start": "react-native start",
     "lint": "esw",
     "lint-watch": "esw -w --changed",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "test": "jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "react-native"
   },
   "dependencies": {
     "eslint": "^5.1.0",
-    "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "~0.55.2"
   }
