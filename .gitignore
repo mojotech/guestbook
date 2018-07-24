@@ -12,3 +12,6 @@ node_modules
 
 # Android
 !gradle-wrapper.jar
+
+# Environment Variables
+.env
