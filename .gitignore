@@ -9,6 +9,7 @@ node_modules
 
 # OS X
 .DS_Store
+build/
 
 # Android
 !gradle-wrapper.jar
