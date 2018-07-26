@@ -16,20 +16,8 @@ export const setObjectInAsyncStorage = (key, val) => {
   }
 };
 
-export const initMojoNames = async () => {
+export const initMojoNames = async (mojoList) => {
   try {
-    const mojoList = [
-      {
-        name: 'Jen Kaplan',
-        title: 'Intern',
-        image: ' ',
-      },
-      {
-        name: 'Steph Racca',
-        title: 'Intern',
-        image: ' ',
-      },
-    ];
     setObjectInAsyncStorage(MOJOS, mojoList);
   } catch (error) {
     console.log(error);
