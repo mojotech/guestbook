@@ -1,0 +1,10 @@
+{
+  "presets": ["babel-preset-react-native"],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source"
+      ]
+    }
+  }
+}
