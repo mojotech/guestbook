@@ -23,10 +23,12 @@ export const initMojoNames = async () => {
       {
         name: 'Jen Kaplan',
         image: ' ',
+        altImage: ' ',
       },
       {
         name: 'Steph Racca',
         image: ' ',
+        altImage: ' ',
       },
     ];
     setObjectInAsyncStorage(MOJOS, mojoList);
