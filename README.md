@@ -25,4 +25,22 @@ Sometimes you may need to reset or clear the React Native packager's cache. To d
 yarn start --reset-cache
 ```
 
+### Environment Variables
+
+We are using react-native-config for environment variables. 
+
+- Create a .env file in the root directory
+- Copy the .env.sample in source control to your .env file
+- If a variable has a message like "get token", then replace that message with the real specified token
+
+Usage:
+
+If a variable is defined as `SLACK_BOT_TOKEN` in .env:
+
+```
+import Config from 'react-native-config';
+
+const token = Config.SLACK_BOT_TOKEN;
+```
+
 ### Designs
