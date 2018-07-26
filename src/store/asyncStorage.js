@@ -22,12 +22,10 @@ export const initMojoNames = async () => {
     const mojoList = [
       {
         name: 'Jen Kaplan',
-        title: 'Intern',
         image: ' ',
       },
       {
         name: 'Steph Racca',
-        title: 'Intern',
         image: ' ',
       },
     ];
