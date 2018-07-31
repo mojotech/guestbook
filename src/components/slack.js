@@ -56,6 +56,32 @@ const getUsersFromChannel = async (channelName) => {
   }
 };
 
+const sendDirectMessageToUser = (userArray, message) => {
+  const slackIds = userArray.map(user => user.slackID);
+  if (userArray.length === 1) {
+    slack.chat.postMessage({ token: botToken, slackIds, message });
+  } else {
+    const response = slack.conversations.open({ token: botToken, users: slackIds });
+    const channelId = response.channel.id;
+    slack.chat.postMessage({ token: botToken, channelId, message });
+  }
+};
+
+const userArrayTest = [
+  {
+    name: 'Stephanie Racca',
+    slackID: 'UB66MDV3Q',
+  },
+];
+
+export const SlackDM = () => (
+  <Button
+    onPress={() => sendDirectMessageToUser(userArrayTest, 'Hello!')}
+    title="Send Direct Message!"
+    color="red"
+  />
+);
+
 export const SlackButton = () => (
   <Button
     onPress={() => getUsersFromChannel('pvd')}
@@ -71,5 +97,3 @@ export const SlackMessage = () => (
     color="green"
   />
 );
-
-export default SlackButton;

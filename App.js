@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Welcome from './src/containers/Welcome/index';
-import Slack from './src/components/slack';
+import { SlackButton, SlackDM } from './src/components/slack';
 
 
 const styles = StyleSheet.create({
@@ -18,7 +18,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Welcome />
-        <Slack />
+        <SlackButton />
+        <SlackDM />
       </View>
     );
   }
