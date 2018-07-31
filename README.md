@@ -43,4 +43,10 @@ import Config from 'react-native-config';
 const token = Config.SLACK_BOT_TOKEN;
 ```
 
+### Debugging
+
+Sometimes `watchman` is overly aggressive with the files it caches, leading to changes not being reflected in the app. If you experience an error without explanation, or errors related to `haste` or `watchman` indicated on the red debug screen on your simulator, try running:
+
+    $ yarn reset
+
 ### Designs
