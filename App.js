@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import SlackMessage from './src/components/slack';
+import Welcome from './src/containers/Welcome/index';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SlackMessage />
+        <Welcome />
       </View>
     );
   }
