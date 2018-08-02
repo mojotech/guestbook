@@ -12,6 +12,18 @@ const sendMessageToChannel = (channel, text) => {
   slack.chat.postMessage({ token: botToken, channel, text });
 };
 
+/* const getUserGroupID = async (userGroupName) => {
+  try {
+    const userGroups = await slack.usergroups.list({ token: workspaceToken });
+    const userGroup = userGroups.usergroups.find(group => group.name === userGroupName);
+    return await userGroup.id;
+  } catch (error) {
+    console.log(error);
+  }
+}; */
+
+// const pvdUserGroup = getUserGroupID('Providence Guestbook');
+
 const storeUsersInfo = (usersInfo) => {
   const mojoList = [];
   usersInfo.forEach((userInfo) => {
