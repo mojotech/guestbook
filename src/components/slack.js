@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-native';
 import Config from 'react-native-config';
 import slack from 'slack';
-import { initMojoNames, displayMojos } from '../store/asyncStorage';
+import { initMojoNames, displayMojos, addVisitor } from '../store/asyncStorage';
 
 const botToken = Config.SLACK_BOT_TOKEN;
 
@@ -10,7 +10,9 @@ const hostsMentions = (hosts) => hosts.map((user) => `<@${user.slackID}>`).join(
 
 const sendMessageToChannel = async (channel, guest, hosts) => {
   const text = `A guest has just arrived! ${hostsMentions(hosts)} please go meet ${guest} at the front door.`;
-  slack.chat.postMessage({ token: botToken, channel, text });
+  const response = await slack.chat.postMessage({ token: botToken, channel, text });
+  const messageState = response.ok ? { success: true } : { success: false, errorMessage: response.error };
+  addVisitor(guest, hosts, messageState);
 };
 
 const storeUsersInfo = (usersInfo) => {
