@@ -11,11 +11,10 @@ export const colors = {
 export const spacing = {
   xs: '2px',
   s: '5px',
-  m: '10px',
-  l: '15px',
-  xl: '20px',
-  xxl: '30px',
-  xxxl: '40px',
+  m: '40px',
+  l: '96px',
+  xl: '96px',
+  xxl: '240px',
 };
 
 export const fontSizes = {
@@ -23,7 +22,7 @@ export const fontSizes = {
   small: '18px',
   medium: '20px',
   large: '42px',
-  xlarge: '120px',
+  xxlarge: '120px',
 };
 
 export const weights = {
