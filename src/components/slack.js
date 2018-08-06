@@ -6,7 +6,10 @@ import { initMojoNames, displayMojos } from '../store/asyncStorage';
 
 const botToken = Config.SLACK_BOT_TOKEN;
 
-const sendMessageToChannel = (channel, text) => {
+const hostsMentions = (hosts) => hosts.map((user) => `<@${user.slackID}>`).join(', ');
+
+const sendMessageToChannel = async (channel, guest, hosts) => {
+  const text = `A guest has just arrived! ${hostsMentions(hosts)} please go meet ${guest} at the front door.`;
   slack.chat.postMessage({ token: botToken, channel, text });
 };
 
@@ -119,8 +122,10 @@ export const SlackButton = () => (
 
 export const SlackMessage = () => (
   <Button
-    onPress={() => sendMessageToChannel('#guestbot-test', 'Hello World!')}
+    onPress={() => sendMessageToChannel('#guestbot-test', 'Guest Name', [{ name: 'Jen Kaplan', slackID: 'UB0P5J1PZ' }])}
     title="Send slackbot message!"
     color="green"
   />
 );
+
+export default SlackMessage;
