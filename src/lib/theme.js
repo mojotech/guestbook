@@ -13,7 +13,7 @@ export const spacing = {
   s: '5px',
   m: '40px',
   l: '96px',
-  xl: '96px',
+  xl: '109px',
   xxl: '240px',
 };
 
