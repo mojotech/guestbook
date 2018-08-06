@@ -16,9 +16,20 @@ export const setObjectInAsyncStorage = (key, val) => {
   }
 };
 
+const updateMojoNames = (storedMojoNames, mojoList) => {
+  const missingMojoNames = mojoList.filter(mojo => (!storedMojoNames.includes(mojo)));
+  setObjectInAsyncStorage(MOJOS, storedMojoNames.concat(missingMojoNames));
+};
+
 export const initMojoNames = async (mojoList) => {
   try {
-    setObjectInAsyncStorage(MOJOS, mojoList);
+    const mojoNames = await AsyncStorage.getItem(MOJOS);
+    const storedMojoNames = JSON.parse(mojoNames);
+    if (!storedMojoNames) {
+      setObjectInAsyncStorage(MOJOS, mojoList);
+    } else {
+      updateMojoNames(storedMojoNames, mojoList);
+    }
   } catch (error) {
     console.log(error);
   }
