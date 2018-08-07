@@ -29,3 +29,9 @@ export const weights = {
   regular: 400,
   bold: 700,
 };
+
+export const fonts = {
+  GTAmericaReg: 'GTAmerica-Regular',
+  AltisBoldItalic: 'Altis-BoldItalic',
+  AltisBold: 'Altis-Bold',
+};
