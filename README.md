@@ -11,7 +11,7 @@ This project is a React Native 0.55.4 app.
 
 - `yarn run ios`
 
-Opens the app in the iOS Simulator if on a Mac and have XCode installed. Can specify the hardware by clicking the "Hardware" tab while running the simulator or by adding the hardware name as a flag, `yarn run ios simulator="<hardware>"`
+Opens the app in the iOS Simulator if on a Mac and have XCode installed. Can specify the hardware by clicking the "Hardware" tab while running the simulator or by adding the hardware name as a flag, `yarn run ios simulator="<hardware>"`. The hardware we are using for this project can be simulated using the command: `yarn ios --simulator "iPad Pro (12.9-inch) (2nd generation)"`
 
 - `yarn start`
 
