@@ -13,7 +13,7 @@ export const spacing = {
   s: '5px',
   m: '40px',
   l: '96px',
-  xl: '96px',
+  xl: '109px',
   xxl: '240px',
 };
 
@@ -28,4 +28,10 @@ export const fontSizes = {
 export const weights = {
   regular: 400,
   bold: 700,
+};
+
+export const fonts = {
+  GTAmericaReg: 'GTAmerica-Regular',
+  AltisBoldItalic: 'Altis-BoldItalic',
+  AltisBold: 'Altis-Bold',
 };

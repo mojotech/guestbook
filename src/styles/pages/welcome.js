@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  fontSizes, colors, weights, spacing,
+  fontSizes, colors, weights, spacing, fonts,
 } from '../../lib/theme';
 
 export const SignInHere = styled.Text`
@@ -10,6 +10,9 @@ export const SignInHere = styled.Text`
   text-align: left;
   margin-top: ${spacing.xxl};
   margin-left: ${spacing.l};
+  margin-top: 180px;
+  margin-left: ${spacing.s};
+  fontFamily: ${fonts.AltisBold};
 `;
 
 export const WelcomeSignIn = styled.Text`
@@ -19,6 +22,7 @@ export const WelcomeSignIn = styled.Text`
   text-align: left;
   margin-top: ${spacing.m};
   margin-left: ${spacing.l};
+  fontFamily: ${fonts.GTAmericaReg};
 `;
 
 export const NameInput = styled.TextInput`
@@ -33,6 +37,7 @@ export const NameInput = styled.TextInput`
   margin-left: ${spacing.l};
   margin-right: ${spacing.l};
   text-align: left;
+  fontFamily: ${fonts.GTAmericaReg};
 `;
 
 export const Background = styled.Image`
