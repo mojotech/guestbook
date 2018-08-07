@@ -16,21 +16,20 @@ export const setObjectInAsyncStorage = (key, val) => {
   }
 };
 
-export const initMojoNames = async () => {
+const updateMojoNames = (storedMojoNames, mojoList) => {
+  const missingMojoNames = mojoList.filter(mojo => (!storedMojoNames.includes(mojo)));
+  setObjectInAsyncStorage(MOJOS, storedMojoNames.concat(missingMojoNames));
+};
+
+export const initMojoNames = async (mojoList) => {
   try {
-    const mojoList = [
-      {
-        name: 'Jen Kaplan',
-        title: 'Intern',
-        image: ' ',
-      },
-      {
-        name: 'Steph Racca',
-        title: 'Intern',
-        image: ' ',
-      },
-    ];
-    setObjectInAsyncStorage(MOJOS, mojoList);
+    const mojoNames = await AsyncStorage.getItem(MOJOS);
+    const storedMojoNames = JSON.parse(mojoNames);
+    if (!storedMojoNames) {
+      setObjectInAsyncStorage(MOJOS, mojoList);
+    } else {
+      updateMojoNames(storedMojoNames, mojoList);
+    }
   } catch (error) {
     console.log(error);
   }
@@ -78,7 +77,7 @@ export const displayVisitors = async () => {
   try {
     const visitorLog = await AsyncStorage.getItem(VISITORLOG);
     const parsed = JSON.parse(visitorLog);
-    for (let i = 0; i < parsed.length; i + 1) {
+    for (let i = 0; i < parsed.length; i += 1) {
       console.log(parsed[i]);
     }
   } catch (error) {
@@ -90,7 +89,7 @@ export const displayMojos = async () => {
   try {
     const mojoList = await AsyncStorage.getItem(MOJOS);
     const parsed = JSON.parse(mojoList);
-    for (let i = 0; i < parsed.length; i + 1) {
+    for (let i = 0; i < parsed.length; i += 1) {
       console.log(parsed[i]);
     }
   } catch (error) {
