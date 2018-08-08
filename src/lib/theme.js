@@ -3,8 +3,8 @@ export const colors = {
   white: '#FFFFFF',
   green: '#28ba00',
   grey: '#6b7f8a',
-  lightGrey: 'e9edef',
-  lightBlue: '8dabbc',
+  lightGrey: '#e9edef',
+  lightBlue: '#8dabbc',
 };
 
 export const spacing = {
