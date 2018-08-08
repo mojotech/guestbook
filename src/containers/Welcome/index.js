@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import {
   Heading,
@@ -10,6 +11,17 @@ import {
 import WavyLines from '../../constants/images/wavy-lines.png';
 
 export default class Welcome extends React.Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+
+  handleNextPress = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Employees');
+  };
+
   render() {
     return (
       <View
