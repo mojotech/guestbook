@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { createSwitchNavigator } from 'react-navigation';
 import Welcome from './src/containers/Welcome/index';
 import { listenToMentions } from './src/lib/slack';
+import Employees from './src/containers/Employees/index';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +13,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const AppNavigator = createSwitchNavigator(
+  {
+    Welcome: {
+      screen: Welcome,
+    },
+    Employees: {
+      screen: Employees,
+    },
+  },
+  {
+    initialRouteName: 'Welcome',
+  },
+);
 
 export default class App extends React.Component {
   initSlackServices = () => {
@@ -24,7 +40,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Welcome />
+        <AppNavigator />
       </View>
     );
   }
