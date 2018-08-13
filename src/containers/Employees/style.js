@@ -87,7 +87,7 @@ export const Search = styled.View`
   flex-direction: row;
   align-items: center;
   background-color: ${colors.extraLightGrey};
-  margin-bottom: ${spacing.xl};
+  margin-bottom: 8px;
 `;
 
 export const SearchBar = styled.TextInput`
@@ -95,6 +95,31 @@ export const SearchBar = styled.TextInput`
   font-family: ${fonts.GTAmericaReg};
   color: ${colors.grey};
   height: 80px;
+  margin-left: ${spacing.s};
+`;
+
+export const SendNotification = styled.View`
+  background-color: ${colors.green};
+  height: 80px;
+  flex-direction: row;
+  justify-content: center;
+  padding-horizontal: 32px;
+  padding-vertical: 26px;
+  flex: -1;
+`;
+
+export const SendText = styled.Text`
+  font-size: ${fontSizes.small};
+  font-family: ${fonts.GTAmericaReg};
+  color: ${colors.white};
+  margin-left: 32px;
+`;
+
+export const WhiteArrow = styled.Image`
+  margin-left: 18px;
+  height: 10px;
+  width: 12px;
+  margin-top: 7px;
 `;
 
 export const SearchIcon = styled.Image`
@@ -102,4 +127,46 @@ export const SearchIcon = styled.Image`
   height: 16px;
   margin-left: ${spacing.l};
   margin-right: ${spacing.s};
+`;
+
+export const SearchContainer = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const SelectedUser = styled.View`
+  height: 56px;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 4px;
+  background-color: ${colors.white};
+  margin-left: 12px;
+  padding: 12px;
+`;
+
+export const SelectedUserImage = styled.Image`
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+`;
+
+export const SelectedUserName = styled.Text`
+  font-size: ${fontSizes.xsmall};
+  font-family: ${fonts.GTAmericaReg};
+  color: ${colors.grey};
+  margin-left: 10px;
+`;
+
+export const SelectedUserRemoveIcon = styled.Image`
+  height: 16px;
+  width: 16px;
+  margin-left: ${spacing.s};
+`;
+
+export const AddPeople = styled.Text`
+  font-size: ${fontSizes.tiny};
+  font-family: ${fonts.GTAmericaReg};
+  color: ${colors.grey};
+  margin-bottom: ${spacing.s};
 `;
