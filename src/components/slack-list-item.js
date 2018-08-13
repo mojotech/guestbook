@@ -4,9 +4,11 @@ import { View, TouchableOpacity } from 'react-native';
 import RightArrowGreyIcon from '../icons/right-arrow-grey.png';
 import * as Style from '../containers/Employees/style';
 
-export const SlackListItem = ({ item, sendMessage }) => (
+export const SlackListItem = ({ item, selectUser }) => (
   <View key={item.slackID}>
-    <TouchableOpacity onPress={() => sendMessage(item.slackID)}>
+    <TouchableOpacity
+      onPress={() => selectUser(item.slackID, item.name, item.image)}
+    >
       <Style.MojoRow>
         <Style.MojoImageCol>
           <Style.MojoImage source={{ uri: item.image }} />
@@ -31,7 +33,7 @@ SlackListItem.propTypes = {
     name: PropTypes.string,
     slackID: PropTypes.string,
   }).isRequired,
-  sendMessage: PropTypes.func.isRequired,
+  selectUser: PropTypes.func.isRequired,
 };
 
 export default SlackListItem;
