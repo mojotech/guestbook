@@ -4,7 +4,7 @@ import LeftArrowIcon from '../../icons/left-arrow.png';
 import { getMojos } from '../../lib/slack';
 import * as Style from './style';
 import SlackUser from '../../components/slack-list-item';
-import { Search } from '../../components/search';
+import Search from '../../components/search';
 import DefaultHost from '../../components/default-notify';
 import { RootView } from '../../components/root-view';
 
@@ -12,6 +12,7 @@ export default class Employees extends React.Component {
   state = {
     mojos: [],
     selectedMojos: [],
+    searchInput: '',
   };
 
   async componentDidMount() {
@@ -32,9 +33,19 @@ export default class Employees extends React.Component {
     console.log(slackID);
   };
 
+  updateSearch = value => {
+    this.setState({ searchInput: value });
+  };
+
+  filterNames = (employeeName, input) =>
+    employeeName.toLowerCase().includes(input.toLowerCase());
+
   render() {
-    const { mojos } = this.state;
+    const { mojos, searchInput } = this.state;
     const { selectedMojos } = this.state;
+    const filteredMojos = mojos.filter(mojo =>
+      this.filterNames(mojo.name, searchInput),
+    );
     return (
       <RootView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -45,10 +56,12 @@ export default class Employees extends React.Component {
               selectedMojos={selectedMojos}
               removeFunction={this.removeUser}
               sendFunction={this.sendNotification}
+              inputText={searchInput}
+              handleInputChange={this.updateSearch}
             />
             <DefaultHost />
             <Style.MojoList>
-              {mojos.map(item => (
+              {filteredMojos.map(item => (
                 <SlackUser
                   key={item.slackID}
                   item={item}

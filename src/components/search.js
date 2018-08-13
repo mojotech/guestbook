@@ -7,7 +7,13 @@ import { SelectedUsers } from './selected-user';
 import { isPresent } from '../lib/util';
 import * as Style from '../containers/Employees/style';
 
-export const Search = ({ selectedMojos, removeFunction, sendFunction }) => (
+const Search = ({
+  selectedMojos,
+  removeFunction,
+  sendFunction,
+  inputText,
+  handleInputChange,
+}) => (
   <View>
     {isPresent(selectedMojos) ? (
       <Style.Search>
@@ -20,6 +26,8 @@ export const Search = ({ selectedMojos, removeFunction, sendFunction }) => (
             placeholder=""
             autoCapitalize="words"
             autoCorrect={false}
+            value={inputText}
+            onChangeText={handleInputChange}
           />
         </Style.SearchContainer>
         <TouchableOpacity
@@ -38,6 +46,8 @@ export const Search = ({ selectedMojos, removeFunction, sendFunction }) => (
           placeholder="Search"
           autoCapitalize="words"
           autoCorrect={false}
+          value={inputText}
+          onChangeText={handleInputChange}
         />
       </Style.Search>
     )}
@@ -51,6 +61,12 @@ Search.propTypes = {
   selectedMojos: PropTypes.arrayOf(PropTypes.object).isRequired,
   removeFunction: PropTypes.func.isRequired,
   sendFunction: PropTypes.func.isRequired,
+  inputText: PropTypes.string,
+  handleInputChange: PropTypes.func.isRequired,
+};
+
+Search.defaultProps = {
+  inputText: '',
 };
 
 export default Search;
