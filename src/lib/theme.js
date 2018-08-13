@@ -20,6 +20,7 @@ export const spacing = {
 };
 
 export const fontSizes = {
+  tiny: '14px',
   xsmall: '16px',
   small: '18px',
   medium: '20px',
