@@ -77,9 +77,7 @@ export const displayVisitors = async () => {
   try {
     const visitorLog = await AsyncStorage.getItem(VISITORLOG);
     const parsed = JSON.parse(visitorLog);
-    for (let i = 0; i < parsed.length; i += 1) {
-      console.log(parsed[i]);
-    }
+    parsed.forEach(visitor => console.log(visitor));
   } catch (error) {
     console.log(error);
   }
@@ -89,9 +87,7 @@ export const displayMojos = async () => {
   try {
     const mojoList = await AsyncStorage.getItem(MOJOS);
     const parsed = JSON.parse(mojoList);
-    for (let i = 0; i < parsed.length; i += 1) {
-      console.log(parsed[i]);
-    }
+    parsed.forEach(mojo => console.log(mojo));
   } catch (error) {
     console.log(error);
   }
