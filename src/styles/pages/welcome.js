@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { fontSizes, colors, weights, spacing } from '../../lib/theme';
+import { fontSizes, fonts, colors, weights, spacing } from '../../lib/theme';
 
 export const Heading = styled.Text`
   font-size: ${fontSizes.xxlarge};
   font-weight: ${weights.bold};
   color: ${colors.black};
   text-align: left;
-  margin-top: ${spacing.xxxxl};
+  margin-top: 104px;
   margin-left: ${spacing.xxxl};
+  font-family: ${fonts.AltisBold};
 `;
 
 export const SubHeading = styled.Text`
@@ -15,8 +16,9 @@ export const SubHeading = styled.Text`
   font-weight: ${weights.regular};
   color: ${colors.grey};
   text-align: left;
-  margin-top: ${spacing.xl};
+  margin-top: ${spacing.l};
   margin-left: ${spacing.xxxl};
+  font-family: ${fonts.GTAmericaReg};
 `;
 
 export const NameInput = styled.TextInput`
@@ -28,6 +30,7 @@ export const NameInput = styled.TextInput`
   margin-top: ${spacing.xxxl};
   text-align: left;
   padding-left: 15px;
+  fontfamily: ${fonts.GTAmericaReg};
 `;
 
 export const Background = styled.Image`
@@ -35,9 +38,8 @@ export const Background = styled.Image`
   width: 100%;
 `;
 
-export const InputWrapper = styled.View`
-  border-bottom-color: ${colors.green};
-  border-bottom-width: 2px;
+export const NameInputView = styled.View`
+  margin-top: 104px;
   margin-left: ${spacing.xxxl};
   margin-right: ${spacing.xxxl};
 `;

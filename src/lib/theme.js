@@ -16,7 +16,6 @@ export const spacing = {
   xl: '40px',
   xxl: '52px',
   xxxl: '96px',
-  xxxxl: '240px',
 };
 
 export const fontSizes = {
