@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontSizes, colors, weights, spacing } from '../../lib/theme';
+import { fontSizes, colors, weights, spacing, fonts } from '../../lib/theme';
 
 export const Heading = styled.Text`
   font-size: ${fontSizes.xxlarge};
@@ -8,6 +8,7 @@ export const Heading = styled.Text`
   text-align: left;
   margin-top: ${spacing.xxl};
   margin-left: ${spacing.l};
+  fontfamily: ${fonts.AltisBold};
 `;
 
 export const SubHeading = styled.Text`
@@ -17,6 +18,7 @@ export const SubHeading = styled.Text`
   text-align: left;
   margin-top: ${spacing.m};
   margin-left: ${spacing.l};
+  fontfamily: ${fonts.GTAmericaReg};
 `;
 
 export const NameInput = styled.TextInput`
@@ -28,6 +30,7 @@ export const NameInput = styled.TextInput`
   margin-top: ${spacing.xl};
   text-align: left;
   padding-left: 15px;
+  fontfamily: ${fonts.GTAmericaReg};
 `;
 
 export const Background = styled.Image`
