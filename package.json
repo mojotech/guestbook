@@ -17,6 +17,11 @@
     "prettier": "1.13.7",
     "react-test-renderer": "16.3.1"
   },
+  "rnpm": {
+    "assets": [
+	    "./assets/fonts"
+    ]
+  },
   "scripts": {
     "start": "react-native start",
     "lint": "esw",
