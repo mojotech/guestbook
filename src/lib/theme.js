@@ -32,6 +32,7 @@ export const weights = {
 };
 
 export const fonts = {
-  regular: 'GT America',
-  title: 'Altis',
+  GTAmericaReg: 'GTAmerica-Regular',
+  AltisBoldItalic: 'Altis-BoldItalic',
+  AltisBold: 'Altis-Bold',
 };
