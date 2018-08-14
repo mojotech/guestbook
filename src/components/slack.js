@@ -56,6 +56,33 @@ const getUsersFromChannel = async (channelName) => {
   }
 };
 
+
+const connectWebSocket = url => (
+  new Promise(((resolve, reject) => {
+    /* eslint-disable-next-line */
+    const server = new WebSocket(url);
+    server.onopen = () => {
+      resolve(server);
+    };
+    server.onerror = (err) => {
+      reject(err);
+    };
+  }))
+);
+
+export const listenToMentions = async () => {
+  const { ok, url } = await slack.rtm.connect({ token: botToken });
+  if (!ok) {
+    throw new Error('Failed to connect to slack');
+  }
+  const server = await connectWebSocket(url);
+
+  server.onmessage = console.log;
+  server.onerror = (err) => {
+    throw new Error(err);
+  };
+};
+
 const sendDirectMessageToUser = (userArray, message) => {
   const slackIds = userArray.map(user => user.slackID);
   if (userArray.length === 1) {
