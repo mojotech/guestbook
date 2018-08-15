@@ -36,6 +36,7 @@ export const Background = styled.Image`
   resize-mode: contain;
   align-self: flex-end;
 `;
+
 export const NameInputView = styled.View`
   margin-top: ${spacing.xl};
   margin-left: ${spacing.l};
