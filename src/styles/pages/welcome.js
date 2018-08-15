@@ -27,8 +27,8 @@ export const NameInputText = styled.TextInput`
   color: ${colors.grey};
   font-size: ${fontSizes.medium};
   font-weight: ${weights.regular};
-  borderBottomEndRadius: 20px;
-  lineHeight: 60px;
+  lineHeight: 25px;
+  padding-top: 5px;
   text-align: left;
   padding-left: 15px;
   fontFamily: ${fonts.GTAmericaReg};
