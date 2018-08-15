@@ -1,13 +1,9 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import {
-  Heading,
-  SubHeading,
-  NameInput,
-  Background,
-  InputWrapper,
-} from '../../styles/pages/welcome';
+import { View, StyleSheet, Image } from 'react-native';
+import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import WavyLines from '../../constants/images/wavy-lines.png';
+import MojoTechIcon from '../../constants/images/mojotechicon.png';
+import { NameInput } from '../../components/name-input';
 
 export default class Welcome extends React.Component {
   render() {
@@ -29,13 +25,20 @@ export default class Welcome extends React.Component {
           />
         </View>
         <View style={{ flex: 1 }}>
-          <Heading>Sign in here.</Heading>
+          <Image
+            style={{
+              alignSelf: 'flex-end',
+              marginRight: 44,
+              marginTop: 42,
+            }}
+            /* eslint-disable-next-line */
+            source={MojoTechIcon}
+          />
+          <Heading>Welcome to MojoTech.</Heading>
           <SubHeading>
-            Welcome! Sign in to let your host know you&apos;re here.
+            Sign in to let your host know you&apos;re here.
           </SubHeading>
-          <InputWrapper>
-            <NameInput placeholder="What&apos;s your name?" />
-          </InputWrapper>
+          <NameInput />
         </View>
       </View>
     );
