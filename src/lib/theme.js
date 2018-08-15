@@ -8,12 +8,14 @@ export const colors = {
 };
 
 export const spacing = {
-  xs: '2px',
-  s: '5px',
-  m: '40px',
-  l: '96px',
-  xl: '96px',
-  xxl: '240px',
+  xs: '5px',
+  s: '15px',
+  m: '20px',
+  l: '30px',
+  xl: '40px',
+  xxl: '52px',
+  xxxl: '96px',
+  xxxxl: '240px',
 };
 
 export const fontSizes = {
