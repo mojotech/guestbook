@@ -1,8 +1,10 @@
 import React from 'react';
+import {Image} from 'react-native';
 import {NameInputView, TextInputWrapper, NextButton, ButtonText, NameInputText } from '../styles/pages/welcome';
+import ArrowIcon from '../constants/images/arrowicon.png'
 
 export const NameInput = () => (
-  <NameInputView style={{flex: 1, flexDirection: 'row'}}>
+  <NameInputView>
     <TextInputWrapper>
       <NameInputText
         placeholder='What&apos;s your name?'
@@ -12,6 +14,10 @@ export const NameInput = () => (
       <ButtonText>
         Next
       </ButtonText>
+      <Image
+        /* eslint-disable-next-line */
+        source={ArrowIcon}
+      />
     </NextButton>
   </NameInputView>
 );

@@ -8,7 +8,7 @@ export const Heading = styled.Text`
   font-weight: ${weights.bold};
   color: ${colors.black};
   text-align: left;
-  margin-top: ${spacing.xxl};
+  margin-top: ${spacing.xl};
   margin-left: ${spacing.l};
   fontFamily: ${fonts.AltisBold};
 `;
@@ -23,13 +23,12 @@ export const SubHeading = styled.Text`
   fontFamily: ${fonts.GTAmericaReg};
 `;
 
-export const NameInput = styled.TextInput`
+export const NameInputText = styled.TextInput`
   color: ${colors.grey};
   font-size: ${fontSizes.medium};
   font-weight: ${weights.regular};
   borderBottomEndRadius: 20px;
   lineHeight: 60px;
-  margin-top: ${spacing.xl};
   text-align: left;
   padding-left: 15px;
   fontFamily: ${fonts.GTAmericaReg};
@@ -39,10 +38,32 @@ export const Background = styled.Image`
   resizeMode: contain;
   alignSelf: flex-end;
 `;
-
-export const InputWrapper = styled.View`
-  borderBottomColor: ${colors.green};
-  borderBottomWidth: 2px;
+export const NameInputView = styled.View`
+  margin-top: ${spacing.xl};
   margin-left: ${spacing.l};
   margin-right: ${spacing.l};
+  flex: 1;
+  flexDirection: row;
+`;
+export const TextInputWrapper = styled.View`
+  backgroundColor: ${colors.lightGrey};
+  width: 592px;
+  height: 80px;
+  justifyContent: center;
+`;
+
+export const NextButton = styled.TouchableOpacity`
+  backgroundColor: ${colors.green};
+  width: 240px;
+  height: 80px;
+  justifyContent: center;
+  alignItems: center;
+  flexDirection: row;
+`;
+
+export const ButtonText = styled.Text`
+  fontFamily: ${fonts.GTAmericaReg};
+  color: ${colors.white};
+  font-size: ${fontSizes.small};
+  margin-right: 5px;
 `;
