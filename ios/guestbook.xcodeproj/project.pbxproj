@@ -311,7 +311,7 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		938C843B2118EC0D00F1682A /* PBXContainerItemProxy */ = {
+		938C89C6211B393D00F1682A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C62EA9C7C8B341629167082C /* ReactNativeConfig.xcodeproj */;
 			proxyType = 2;
@@ -337,7 +337,6 @@
 		00E356EE1AD99517003FC87E /* guestbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = guestbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* guestbookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = guestbookTests.m; sourceTree = "<group>"; };
-		0A0AE4D17CAD448B8EF3475E /* Altis-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Altis-Bold.otf"; path = "../src/fonts/Altis-Bold.otf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* guestbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guestbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,10 +350,7 @@
 		2D02E47B1E0B4A5D006451C7 /* guestbook-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guestbook-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* guestbook-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guestbook-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D91DA927A69454D9B6EC21B /* hinted-GTAmerica-Regular (1).ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "hinted-GTAmerica-Regular (1).ttf"; path = "../src/fonts/hinted-GTAmerica-Regular (1).ttf"; sourceTree = "<group>"; };
-		3AEBB5D01B8A4E4AA85D906A /* Altis-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Altis-BoldItalic.otf"; path = "../src/fonts/Altis-BoldItalic.otf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		749E2951E9144D68B4AADC47 /* GT America Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GT America Regular.ttf"; path = "../assets/fonts/GT America Regular.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		88E11C4FC7AB4489934A14CD /* Altis-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Altis-Bold.otf"; path = "../assets/fonts/Altis-Bold.otf"; sourceTree = "<group>"; };
@@ -366,7 +362,6 @@
 		C216792FEA8B47C5A00CEEE7 /* Altis-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Altis-BoldItalic.otf"; path = "../assets/fonts/Altis-BoldItalic.otf"; sourceTree = "<group>"; };
 		C62EA9C7C8B341629167082C /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		D986913978F94A3C8CCED2BD /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
-		EB98A6ABCD9441BD977F81AB /* hinted-GTAmerica-Regular (1).ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "hinted-GTAmerica-Regular (1).ttf"; path = "../assets/fonts/hinted-GTAmerica-Regular (1).ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,8 +602,7 @@
 				00E356EF1AD99517003FC87E /* guestbookTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				938C84122118EC0B00F1682A /* Recovered References */,
-				EEED69D4931A4631BECE9410 /* Resources */,
+				938C899D211B393000F1682A /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -626,18 +620,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		938C84122118EC0B00F1682A /* Recovered References */ = {
+		938C899D211B393000F1682A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				D986913978F94A3C8CCED2BD /* libReactNativeConfig.a */,
+				88E11C4FC7AB4489934A14CD /* Altis-Bold.otf */,
+				C216792FEA8B47C5A00CEEE7 /* Altis-BoldItalic.otf */,
+				B1EB921DA4054730BA4D5E27 /* GTAmerica-Regular.ttf */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		938C84382118EC0D00F1682A /* Products */ = {
+		938C89C3211B393C00F1682A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				938C843C2118EC0D00F1682A /* libReactNativeConfig.a */,
+				938C89C7211B393D00F1682A /* libReactNativeConfig.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -649,21 +646,6 @@
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EEED69D4931A4631BECE9410 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0A0AE4D17CAD448B8EF3475E /* Altis-Bold.otf */,
-				3AEBB5D01B8A4E4AA85D906A /* Altis-BoldItalic.otf */,
-				2D91DA927A69454D9B6EC21B /* hinted-GTAmerica-Regular (1).ttf */,
-				88E11C4FC7AB4489934A14CD /* Altis-Bold.otf */,
-				C216792FEA8B47C5A00CEEE7 /* Altis-BoldItalic.otf */,
-				EB98A6ABCD9441BD977F81AB /* hinted-GTAmerica-Regular (1).ttf */,
-				B1EB921DA4054730BA4D5E27 /* GTAmerica-Regular.ttf */,
-				749E2951E9144D68B4AADC47 /* GT America Regular.ttf */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -826,7 +808,7 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 938C84382118EC0D00F1682A /* Products */;
+					ProductGroup = 938C89C3211B393C00F1682A /* Products */;
 					ProjectRef = C62EA9C7C8B341629167082C /* ReactNativeConfig.xcodeproj */;
 				},
 			);
@@ -1093,11 +1075,11 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		938C843C2118EC0D00F1682A /* libReactNativeConfig.a */ = {
+		938C89C7211B393D00F1682A /* libReactNativeConfig.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libReactNativeConfig.a;
-			remoteRef = 938C843B2118EC0D00F1682A /* PBXContainerItemProxy */;
+			remoteRef = 938C89C6211B393D00F1682A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
