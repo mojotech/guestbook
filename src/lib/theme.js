@@ -23,8 +23,8 @@ export const fontSizes = {
   xsmall: '16px',
   small: '18px',
   medium: '20px',
-  large: '42px',
-  xxlarge: '120px',
+  large: '34px',
+  xxlarge: '74px',
 };
 
 export const weights = {

@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
-import {
-  Heading,
-  SubHeading,
-  NameInput,
-  Background,
-  InputWrapper,
-} from '../../styles/pages/welcome';
+import { View, Image } from 'react-native';
 import { RootView } from '../../components/root-view';
+import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import WavyLines from '../../constants/images/wavy-lines.png';
+import MojoTechIcon from '../../constants/images/mojotechicon.png';
+import { NameInput } from '../../components/name-input';
 
 const BottomAnchoredBackgroundImage = () => (
   <RootView style={{ top: null }}>
@@ -34,13 +30,19 @@ export default class Welcome extends React.Component {
       <RootView>
         <BottomAnchoredBackgroundImage />
         <View style={{ flex: 1 }}>
-          <Heading>Sign in here.</Heading>
+          <Image
+            style={{
+              alignSelf: 'flex-end',
+              marginRight: 44,
+              marginTop: 42,
+            }}
+            source={MojoTechIcon}
+          />
+          <Heading>Welcome to MojoTech.</Heading>
           <SubHeading>
-            Welcome! Sign in to let your host know you&apos;re here.
+            Sign in to let your host know you&apos;re here.
           </SubHeading>
-          <InputWrapper>
-            <NameInput placeholder="What&apos;s your name?" />
-          </InputWrapper>
+          <NameInput nextPage={this.handleNextPress} />
         </View>
       </RootView>
     );
