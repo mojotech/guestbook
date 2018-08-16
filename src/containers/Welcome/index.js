@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, Image, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import {
-  Heading, SubHeading, Background,
+  Heading,
+  SubHeading,
+  Background,
 } from '../../styles/pages/welcome';
 import WavyLines from '../../constants/images/wavy-lines.png';
 import MojoTechIcon from '../../constants/images/mojotechicon.png';

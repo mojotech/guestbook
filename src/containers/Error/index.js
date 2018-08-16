@@ -5,9 +5,7 @@ export default class Error extends React.Component {
   render() {
     return (
       <View>
-        <Text>
-          Error Screen
-        </Text>
+        <Text>Error Screen</Text>
       </View>
     );
   }

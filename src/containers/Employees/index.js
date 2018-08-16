@@ -5,9 +5,7 @@ export default class Employees extends React.Component {
   render() {
     return (
       <View>
-        <Text>
-          Employees Screen
-        </Text>
+        <Text>Employees Screen</Text>
       </View>
     );
   }
