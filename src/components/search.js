@@ -10,7 +10,7 @@ import * as Style from '../containers/Employees/style';
 const Search = ({
   selectedMojos,
   removeFunction,
-  sendFunction,
+  onSend,
   inputText,
   handleInputChange,
 }) => (
@@ -30,9 +30,7 @@ const Search = ({
             onChangeText={handleInputChange}
           />
         </Style.SearchContainer>
-        <TouchableOpacity
-          onPress={() => sendFunction(selectedMojos[0].slackID)}
-        >
+        <TouchableOpacity onPress={() => onSend(selectedMojos)}>
           <Style.SendNotification>
             <Style.SendText>Send Notification</Style.SendText>
             <Style.WhiteArrow source={WhiteArrow} />
@@ -60,7 +58,7 @@ const Search = ({
 Search.propTypes = {
   selectedMojos: PropTypes.arrayOf(PropTypes.object).isRequired,
   removeFunction: PropTypes.func.isRequired,
-  sendFunction: PropTypes.func.isRequired,
+  onSend: PropTypes.func.isRequired,
   inputText: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired,
 };
