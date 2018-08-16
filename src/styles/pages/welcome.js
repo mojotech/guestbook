@@ -8,7 +8,7 @@ export const Heading = styled.Text`
   text-align: left;
   margin-top: ${spacing.xl};
   margin-left: ${spacing.l};
-  fontFamily: ${fonts.AltisBold};
+  font-family: ${fonts.AltisBold};
 `;
 
 export const SubHeading = styled.Text`
@@ -18,18 +18,18 @@ export const SubHeading = styled.Text`
   text-align: left;
   margin-top: ${spacing.m};
   margin-left: ${spacing.l};
-  fontFamily: ${fonts.GTAmericaReg};
+  font-family: ${fonts.GTAmericaReg};
 `;
 
 export const NameInputText = styled.TextInput`
   color: ${colors.grey};
   font-size: ${fontSizes.medium};
   font-weight: ${weights.regular};
-  lineHeight: 25px;
+  line-height: 25px;
   padding-top: 5px;
   text-align: left;
   padding-left: 15px;
-  fontFamily: ${fonts.GTAmericaReg};
+  font-family: ${fonts.GTAmericaReg};
 `;
 
 export const Background = styled.Image`
@@ -42,26 +42,26 @@ export const NameInputView = styled.View`
   margin-left: ${spacing.l};
   margin-right: ${spacing.l};
   flex: 1;
-  flexDirection: row;
+  flex-direction: row;
 `;
 export const TextInputWrapper = styled.View`
-  backgroundColor: ${colors.lightGrey};
+  background-color: ${colors.lightGrey};
   width: 592px;
   height: 80px;
-  justifyContent: center;
+  justify-content: center;
 `;
 
 export const NextButton = styled.TouchableOpacity`
-  backgroundColor: ${colors.green};
+  background-color: ${colors.green};
   width: 240px;
   height: 80px;
-  justifyContent: center;
-  alignItems: center;
-  flexDirection: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 `;
 
 export const ButtonText = styled.Text`
-  fontFamily: ${fonts.GTAmericaReg};
+  font-family: ${fonts.GTAmericaReg};
   color: ${colors.white};
   font-size: ${fontSizes.small};
   margin-right: 5px;
