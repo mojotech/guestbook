@@ -25,21 +25,21 @@ export const NameInput = styled.TextInput`
   color: ${colors.grey};
   font-size: ${fontSizes.medium};
   font-weight: ${weights.regular};
-  borderBottomEndRadius: 20px;
-  lineHeight: 60px;
+  border-bottom-end-radius: 20px;
+  line-height: 60px;
   margin-top: ${spacing.xl};
   text-align: left;
   padding-left: 15px;
 `;
 
 export const Background = styled.Image`
-  resizeMode: contain;
-  alignSelf: flex-end;
+  resize-mode: contain;
+  align-self: flex-end;
 `;
 
 export const InputWrapper = styled.View`
-  borderBottomColor: ${colors.green};
-  borderBottomWidth: 2px;
+  border-bottom-color: ${colors.green};
+  border-bottom-width: 2px;
   margin-left: ${spacing.l};
   margin-right: ${spacing.l};
 `;
