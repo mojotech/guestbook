@@ -29,6 +29,8 @@
     "lint-watch": "esw -w --changed",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "prettier:check": "prettier --list-different \"src/**/*.js\" \"src/**/*.json\" \"src/**/*.css\"",
+    "prettier:update": "prettier --write \"src/**/*.js\" \"src/**/*.json\" \"src/**/*.css\"",
     "reset": "./reset.sh",
     "test": "jest"
   },
