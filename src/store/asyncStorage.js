@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native';
+import { serializeDate } from '../lib/date';
 
 const MOJOS = 'MOJOS';
 const VISITORLOG = 'VISITORLOG';
@@ -35,29 +36,19 @@ export const initMojoNames = async (mojoList) => {
   }
 };
 
-export const initVisitorLog = () => {
+export const addVisitor = async (visitorName, visitorHosts, messageState) => {
   try {
-    const emptyVisitorLog = [
-      {
-        name: 'John Doe',
-        arrivalTime: Date.now(),
-      },
-    ];
-    setObjectInAsyncStorage(VISITORLOG, emptyVisitorLog);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const addVisitor = async (visitorName) => {
-  try {
-    const log = await AsyncStorage.getItem(VISITORLOG);
+    const log = await AsyncStorage.getItem(VISITORLOG) || '[]';
     const parsed = JSON.parse(log);
+    const hosts = visitorHosts.map(host => host.name);
     const newVisitor = {
-      name: visitorName,
-      arrivalTime: Date.now(),
+      guest: visitorName,
+      hosts,
+      messageState,
+      arrivalTime: serializeDate(new Date()),
     };
-    setObjectInAsyncStorage(VISITORLOG, parsed.concat(JSON.stringify(newVisitor)));
+    parsed.push(newVisitor);
+    setObjectInAsyncStorage(VISITORLOG, parsed);
   } catch (error) {
     console.log(error);
   }
@@ -76,10 +67,12 @@ export const mostRecentVisitor = async () => {
 export const displayVisitors = async () => {
   try {
     const visitorLog = await AsyncStorage.getItem(VISITORLOG);
-    const parsed = JSON.parse(visitorLog);
-    for (let i = 0; i < parsed.length; i += 1) {
-      console.log(parsed[i]);
+    if (!visitorLog) {
+      console.log('There are no visitors in the visitor log.');
+      return;
     }
+    const parsed = JSON.parse(visitorLog);
+    parsed.forEach(visitor => console.log(visitor));
   } catch (error) {
     console.log(error);
   }
@@ -89,9 +82,7 @@ export const displayMojos = async () => {
   try {
     const mojoList = await AsyncStorage.getItem(MOJOS);
     const parsed = JSON.parse(mojoList);
-    for (let i = 0; i < parsed.length; i += 1) {
-      console.log(parsed[i]);
-    }
+    parsed.forEach(mojo => console.log(mojo));
   } catch (error) {
     console.log(error);
   }

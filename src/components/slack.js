@@ -2,12 +2,17 @@ import React from 'react';
 import { Button } from 'react-native';
 import Config from 'react-native-config';
 import slack from 'slack';
-import { initMojoNames, displayMojos } from '../store/asyncStorage';
+import { initMojoNames, displayMojos, addVisitor } from '../store/asyncStorage';
 
 const botToken = Config.SLACK_BOT_TOKEN;
 
-const sendMessageToChannel = (channel, text) => {
-  slack.chat.postMessage({ token: botToken, channel, text });
+const hostsMentions = (hosts) => hosts.map((user) => `<@${user.slackID}>`).join(', ');
+
+const sendMessageToChannel = async (channel, guest, hosts) => {
+  const text = `A guest has just arrived! ${hostsMentions(hosts)} please go meet ${guest} at the front door.`;
+  const response = await slack.chat.postMessage({ token: botToken, channel, text });
+  const messageState = response.ok ? { success: true } : { success: false, errorMessage: response.error };
+  addVisitor(guest, hosts, messageState);
 };
 
 const storeUsersInfo = (usersInfo) => {
@@ -119,8 +124,10 @@ export const SlackButton = () => (
 
 export const SlackMessage = () => (
   <Button
-    onPress={() => sendMessageToChannel('#guestbot-test', 'Hello World!')}
+    onPress={() => sendMessageToChannel('#guestbot-test', 'Guest Name', [{ name: 'Jen Kaplan', slackID: 'UB0P5J1PZ' }])}
     title="Send slackbot message!"
     color="green"
   />
 );
+
+export default SlackMessage;
