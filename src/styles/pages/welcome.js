@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import {
-  fontSizes, colors, weights, spacing,
-} from '../../lib/theme';
+import { fontSizes, colors, weights, spacing } from '../../lib/theme';
 
 export const Heading = styled.Text`
   font-size: ${fontSizes.xxlarge};
