@@ -16,6 +16,43 @@ export default class Welcome extends React.Component {
   state = {
     inputMarginTop: 104,
     isFocused: false,
+    name: '',
+    timer: null,
+    counter: 0,
+  };
+
+  constructor(props) {
+    super(props);
+    this.nameInput = null;
+  }
+
+  componentDidMount = () => {
+    const timer = setInterval(this.tick, 1000);
+    this.setState({ timer });
+  };
+
+  componentWillUnmount = () => {
+    const { timer } = this.state;
+    this.clearInterval(timer);
+  };
+
+  tick = () => {
+    const { counter } = this.state;
+    this.setState({ counter: counter + 1 });
+    if (counter >= 60) {
+      this.setState({
+        name: '',
+        isFocused: false,
+        inputMarginTop: 104,
+        counter: 0,
+      });
+      Keyboard.dismiss();
+      this.nameInput.blur();
+    }
+  };
+
+  handleKeyboard = () => {
+    this.setState({ counter: 0 });
   };
 
   scrollUp = () => {
@@ -27,8 +64,12 @@ export default class Welcome extends React.Component {
     this.setState({ inputMarginTop: 104, isFocused: false });
   };
 
+  setNameInput = inputElement => {
+    this.nameInput = inputElement;
+  };
+
   render() {
-    const { inputMarginTop, isFocused } = this.state;
+    const { inputMarginTop, isFocused, name } = this.state;
     return (
       <View
         style={{
@@ -71,6 +112,9 @@ export default class Welcome extends React.Component {
                 handleMarginTop={inputMarginTop}
                 handleOnPress={this.scrollDown}
                 isFocused={isFocused}
+                nameInput={name}
+                handleKeyboard={this.handleKeyboard}
+                inputRef={this.setNameInput}
               />
             </View>
           </TouchableWithoutFeedback>
