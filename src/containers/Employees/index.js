@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { TouchableWithoutFeedback, Keyboard, Image } from 'react-native';
+import PropTypes from 'prop-types';
+import Config from 'react-native-config';
 import LeftArrowIcon from '../../icons/left-arrow.png';
-import { getMojos } from '../../lib/slack';
+import { getMojos, sendMessageToChannel } from '../../lib/slack';
 import * as Style from './style';
 import SlackUser from '../../components/slack-list-item';
 import Search from '../../components/search';
@@ -37,11 +38,12 @@ export default class Employees extends React.Component {
     this.setState({ selectedMojos: [] });
   };
 
-  sendNotification = slackID => {
-    console.log(slackID);
+  sendNotification = selectedMojos => {
+    const channelName = Config.CHANNEL;
     const { navigation } = this.props;
     const guest = navigation.getParam('guestName');
-    console.log(guest);
+    sendMessageToChannel(channelName, guest, selectedMojos);
+    this.goToWelcomeScreen();
   };
 
   updateSearch = value => {
@@ -73,7 +75,7 @@ export default class Employees extends React.Component {
             <Search
               selectedMojos={selectedMojos}
               removeFunction={this.removeUser}
-              sendFunction={this.sendNotification}
+              onSend={this.sendNotification}
               inputText={searchInput}
               handleInputChange={this.updateSearch}
             />
