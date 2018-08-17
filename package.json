@@ -29,6 +29,8 @@
     "lint-watch": "esw -w --changed",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "prettier:check": "prettier --list-different \"src/**/*.js\" \"src/**/*.json\" \"src/**/*.css\"",
+    "prettier:update": "prettier --write \"src/**/*.js\" \"src/**/*.json\" \"src/**/*.css\"",
     "reset": "./reset.sh",
     "test": "jest"
   },
@@ -36,7 +38,10 @@
     "preset": "react-native",
     "moduleNameMapper": {
       "styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
-    }
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ]
   },
   "dependencies": {
     "eslint": "^5.1.0",

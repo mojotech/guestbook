@@ -18,11 +18,13 @@ export const setObjectInAsyncStorage = (key, val) => {
 };
 
 const updateMojoNames = (storedMojoNames, mojoList) => {
-  const missingMojoNames = mojoList.filter(mojo => (!storedMojoNames.includes(mojo)));
+  const missingMojoNames = mojoList.filter(
+    mojo => !storedMojoNames.includes(mojo),
+  );
   setObjectInAsyncStorage(MOJOS, storedMojoNames.concat(missingMojoNames));
 };
 
-export const initMojoNames = async (mojoList) => {
+export const initMojoNames = async mojoList => {
   try {
     const mojoNames = await AsyncStorage.getItem(MOJOS);
     const storedMojoNames = JSON.parse(mojoNames);
@@ -38,7 +40,7 @@ export const initMojoNames = async (mojoList) => {
 
 export const addVisitor = async (visitorName, visitorHosts, messageState) => {
   try {
-    const log = await AsyncStorage.getItem(VISITORLOG) || '[]';
+    const log = (await AsyncStorage.getItem(VISITORLOG)) || '[]';
     const parsed = JSON.parse(log);
     const hosts = visitorHosts.map(host => host.name);
     const newVisitor = {
