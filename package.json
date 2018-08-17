@@ -38,7 +38,10 @@
     "preset": "react-native",
     "moduleNameMapper": {
       "styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
-    }
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ]
   },
   "dependencies": {
     "eslint": "^5.1.0",
