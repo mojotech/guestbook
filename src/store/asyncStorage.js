@@ -89,3 +89,17 @@ export const displayMojos = async () => {
     console.log(error);
   }
 };
+
+export const storeUsersInfo = usersInfo => {
+  const mojoList = usersInfo
+    .filter(userInfo => !userInfo.user.is_bot && !userInfo.user.is_app_user)
+    .map(userInfo => ({
+      name: userInfo.user.profile.real_name,
+      image: userInfo.user.profile.image_48,
+      altImage: '',
+      slackID: userInfo.user.id,
+      lastRetrieved: Date.now(),
+    }));
+  initMojoNames(mojoList);
+  displayMojos();
+};
