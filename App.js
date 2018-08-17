@@ -15,11 +15,11 @@ const styles = StyleSheet.create({
 export default class App extends React.Component {
   initSlackServices = () => {
     listenToMentions();
-  }
+  };
 
   componentDidMount = () => {
     this.initSlackServices();
-  }
+  };
 
   render() {
     return (

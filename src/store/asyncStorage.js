@@ -90,10 +90,9 @@ export const displayMojos = async () => {
   }
 };
 
-export const storeUsersInfo = (usersInfo) => {
-  const mojoList = usersInfo.filter(
-    userInfo => (!userInfo.user.is_bot && !userInfo.user.is_app_user),
-  )
+export const storeUsersInfo = usersInfo => {
+  const mojoList = usersInfo
+    .filter(userInfo => !userInfo.user.is_bot && !userInfo.user.is_app_user)
     .map(userInfo => ({
       name: userInfo.user.profile.real_name,
       image: userInfo.user.profile.image_48,
