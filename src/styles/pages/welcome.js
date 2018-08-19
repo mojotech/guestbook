@@ -31,8 +31,8 @@ export const NameInput = styled.TextInput`
 `;
 
 export const Background = styled.Image`
-  resize-mode: contain;
-  align-self: flex-end;
+  resize-mode: stretch;
+  width: 100%;
 `;
 
 export const InputWrapper = styled.View`

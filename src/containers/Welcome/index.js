@@ -12,7 +12,7 @@ import { RootView } from '../../components/root-view';
 import WavyLines from '../../constants/images/wavy-lines.png';
 
 const BottomAnchoredBackgroundImage = () => (
-  <RootView style={{ flexDirection: 'row' }}>
+  <RootView style={{ top: null }}>
     <Background source={WavyLines} />
   </RootView>
 );
