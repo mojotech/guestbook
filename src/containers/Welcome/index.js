@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import {
   Heading,
   SubHeading,
@@ -9,6 +9,7 @@ import {
   InputWrapper,
 } from '../../styles/pages/welcome';
 import { RootView } from '../../components/root-view';
+import MojoTechIcon from '../../constants/images/mojotechicon.png';
 import WavyLines from '../../constants/images/wavy-lines.png';
 
 const BottomAnchoredBackgroundImage = () => (
@@ -34,6 +35,14 @@ export default class Welcome extends React.Component {
       <RootView>
         <BottomAnchoredBackgroundImage />
         <View style={{ flex: 1 }}>
+          <Image
+            style={{
+              alignSelf: 'flex-end',
+              marginRight: 44,
+              marginTop: 42,
+            }}
+            source={MojoTechIcon}
+          />
           <Heading>Sign in here.</Heading>
           <SubHeading>
             Welcome! Sign in to let your host know you&apos;re here.
