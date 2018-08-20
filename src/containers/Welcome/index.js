@@ -42,7 +42,7 @@ export default class Welcome extends React.Component {
           <SubHeading>
             Sign in to let your host know you&apos;re here.
           </SubHeading>
-          <NameInputView />
+          <NameInputView nextPage={this.handleNextPress} />
         </View>
       </RootView>
     );
