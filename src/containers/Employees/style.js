@@ -13,8 +13,10 @@ export const TitleText = styled.Text`
   margin-bottom: ${spacing.m};
 `;
 
-export const GoToPrevPage = styled.Image`
+export const GoToPrevPage = styled.TouchableOpacity`
   margin-bottom: ${spacing.m};
+  width: 12px;
+  height: 18px;
 `;
 
 export const DefaultNotifyRow = styled.View`
