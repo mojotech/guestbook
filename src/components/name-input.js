@@ -10,18 +10,34 @@ import {
 } from '../styles/pages/welcome';
 import ArrowIcon from '../icons/white-arrow.png';
 
-export const NameInput = ({ nextPage }) => (
-  <NameInputView style={{ flex: 1, flexDirection: 'row' }}>
-    <TextInputWrapper>
-      <NameInputText placeholder="What&apos;s your name?" />
-    </TextInputWrapper>
-    <NextButton onPress={nextPage}>
-      <ButtonText>Next</ButtonText>
-      <WhiteArrowIcon source={ArrowIcon} />
-    </NextButton>
-  </NameInputView>
-);
+export default class NameInput extends React.Component {
+  static propTypes = {
+    handleOnFocus: PropTypes.func.isRequired,
+    handleMarginTop: PropTypes.number.isRequired,
+    handleOnPress: PropTypes.func.isRequired,
+    isFocused: PropTypes.bool.isRequired,
+  };
 
-NameInput.propTypes = { nextPage: PropTypes.func.isRequired };
-
-export default NameInput;
+  render() {
+    const {
+      handleOnFocus,
+      handleMarginTop,
+      handleOnPress,
+      isFocused,
+    } = this.props;
+    return (
+      <NameInputView style={{ marginTop: handleMarginTop }}>
+        <TextInputWrapper>
+          <NameInputText
+            placeholder={isFocused ? '' : "What's your name?"}
+            onFocus={handleOnFocus}
+          />
+        </TextInputWrapper>
+        <NextButton onPress={handleOnPress}>
+          <ButtonText>Next</ButtonText>
+          <WhiteArrowIcon source={ArrowIcon} />
+        </NextButton>
+      </NameInputView>
+    );
+  }
+}
