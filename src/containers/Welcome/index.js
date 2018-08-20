@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Image } from 'react-native';
-import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import { RootView } from '../../components/root-view';
-import MojoTechIcon from '../../constants/images/mojotechicon.png';
+import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import WavyLines from '../../constants/images/wavy-lines.png';
+import MojoTechIcon from '../../constants/images/mojotechicon.png';
 import { NameInputView } from '../../components/name-input';
 
 const BottomAnchoredBackgroundImage = () => (
@@ -38,9 +38,9 @@ export default class Welcome extends React.Component {
             }}
             source={MojoTechIcon}
           />
-          <Heading>Sign in here.</Heading>
+          <Heading>Welcome to MojoTech.</Heading>
           <SubHeading>
-            Welcome! Sign in to let your host know you&apos;re here.
+            Sign in to let your host know you&apos;re here.
           </SubHeading>
           <NameInputView />
         </View>
