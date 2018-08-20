@@ -8,6 +8,7 @@ import {
   Background,
   InputWrapper,
 } from '../../styles/pages/welcome';
+import { RootView } from '../../components/root-view';
 import WavyLines from '../../constants/images/wavy-lines.png';
 
 export default class Welcome extends React.Component {
@@ -24,11 +25,7 @@ export default class Welcome extends React.Component {
 
   render() {
     return (
-      <View
-        style={{
-          ...StyleSheet.absoluteFillObject,
-        }}
-      >
+      <RootView>
         <View
           style={{
             ...StyleSheet.absoluteFillObject,
@@ -49,7 +46,7 @@ export default class Welcome extends React.Component {
             <NameInput placeholder="What&apos;s your name?" />
           </InputWrapper>
         </View>
-      </View>
+      </RootView>
     );
   }
 }
