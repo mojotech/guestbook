@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Image } from 'react-native';
-import {
-  Heading,
-  SubHeading,
-  NameInput,
-  Background,
-  InputWrapper,
-} from '../../styles/pages/welcome';
+import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import { RootView } from '../../components/root-view';
 import MojoTechIcon from '../../constants/images/mojotechicon.png';
 import WavyLines from '../../constants/images/wavy-lines.png';
+import { NameInputView } from '../../components/name-input';
 
 const BottomAnchoredBackgroundImage = () => (
   <RootView style={{ top: null }}>
@@ -47,9 +42,7 @@ export default class Welcome extends React.Component {
           <SubHeading>
             Welcome! Sign in to let your host know you&apos;re here.
           </SubHeading>
-          <InputWrapper>
-            <NameInput placeholder="What&apos;s your name?" />
-          </InputWrapper>
+          <NameInputView />
         </View>
       </RootView>
     );
