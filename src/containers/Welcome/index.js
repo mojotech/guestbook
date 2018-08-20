@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import {
   Heading,
   SubHeading,
@@ -10,6 +10,12 @@ import {
 } from '../../styles/pages/welcome';
 import { RootView } from '../../components/root-view';
 import WavyLines from '../../constants/images/wavy-lines.png';
+
+const BottomAnchoredBackgroundImage = () => (
+  <RootView style={{ flexDirection: 'row' }}>
+    <Background source={WavyLines} />
+  </RootView>
+);
 
 export default class Welcome extends React.Component {
   static propTypes = {
@@ -26,17 +32,7 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <RootView>
-        <View
-          style={{
-            ...StyleSheet.absoluteFillObject,
-            flexDirection: 'row',
-          }}
-        >
-          <Background
-            /* eslint-disable-next-line */
-            source={WavyLines}
-          />
-        </View>
+        <BottomAnchoredBackgroundImage />
         <View style={{ flex: 1 }}>
           <Heading>Sign in here.</Heading>
           <SubHeading>
