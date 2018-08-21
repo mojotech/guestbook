@@ -4,14 +4,14 @@ import { TouchableOpacity } from 'react-native';
 import * as Style from '../containers/Employees/style';
 import RemoveIcon from '../icons/remove-icon.png';
 
-export const SelectedUsers = ({ selectedMojos, removeFunction }) =>
+export const SelectedUsers = ({ selectedMojos, onRemove }) =>
   selectedMojos.map(mojo => (
     <Style.SelectedUser key={mojo.slackID}>
       <Style.SelectedUserImage source={{ uri: mojo.image }} />
       <Style.SelectedUserName numberOfLines={1}>
         {mojo.name}
       </Style.SelectedUserName>
-      <TouchableOpacity onPress={() => removeFunction(mojo.slackID)}>
+      <TouchableOpacity onPress={() => onRemove(mojo.slackID)}>
         <Style.SelectedUserRemoveIcon source={RemoveIcon} />
       </TouchableOpacity>
     </Style.SelectedUser>
@@ -19,7 +19,7 @@ export const SelectedUsers = ({ selectedMojos, removeFunction }) =>
 
 SelectedUsers.propTypes = {
   selectedMojos: PropTypes.arrayOf(PropTypes.object).isRequired,
-  removeFunction: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
 };
 
 export default SelectedUsers;
