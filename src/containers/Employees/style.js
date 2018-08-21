@@ -93,6 +93,7 @@ export const Search = styled.View`
 `;
 
 export const SearchBar = styled.TextInput`
+  flex: 1;
   font-size: ${fontSizes.medium};
   font-family: ${fonts.GTAmericaReg};
   color: ${colors.grey};
