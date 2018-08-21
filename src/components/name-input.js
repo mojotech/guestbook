@@ -10,18 +10,21 @@ import {
 } from '../styles/pages/welcome';
 import ArrowIcon from '../icons/white-arrow.png';
 
-export const NameInputView = ({ nextPage }) => (
-  <NameInputContainer>
-    <TextInputWrapper>
-      <NameInputText placeholder="What&apos;s your name?" />
-    </TextInputWrapper>
-    <NextButton onPress={nextPage}>
-      <ButtonText>Next</ButtonText>
-      <WhiteArrowIcon source={ArrowIcon} />
-    </NextButton>
-  </NameInputContainer>
-);
+export default class NameInputView extends React.Component {
+  render() {
+    const { nextPage } = this.props;
+    return (
+      <NameInputContainer>
+        <TextInputWrapper>
+          <NameInputText placeholder="What&apos;s your name?" />
+        </TextInputWrapper>
+        <NextButton onPress={nextPage}>
+          <ButtonText>Next</ButtonText>
+          <WhiteArrowIcon source={ArrowIcon} />
+        </NextButton>
+      </NameInputContainer>
+    );
+  }
+}
 
 NameInputView.propTypes = { nextPage: PropTypes.func.isRequired };
-
-export default NameInputView;
