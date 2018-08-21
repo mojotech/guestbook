@@ -41,8 +41,11 @@ export default class Employees extends React.Component {
   };
 
   removeUser = slackID => {
-    console.log(slackID);
-    this.setState({ selectedMojos: [] });
+    const { selectedMojos } = this.state;
+    const updatedSelected = selectedMojos.filter(
+      mojo => mojo.slackID !== slackID,
+    );
+    this.setState({ selectedMojos: updatedSelected });
   };
 
   sendNotification = selectedMojos => {
