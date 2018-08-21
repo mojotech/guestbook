@@ -23,7 +23,7 @@ const Search = ({
             removeFunction={removeFunction}
           />
           <Style.SearchBar
-            placeholder=""
+            placeholder={selectedMojos.length >= 2 ? '' : 'Search'}
             autoCapitalize="words"
             autoCorrect={false}
             value={inputText}
