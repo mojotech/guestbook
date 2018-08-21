@@ -74,7 +74,7 @@ export default class Employees extends React.Component {
             <Style.TitleText>Who are you here to see?</Style.TitleText>
             <Search
               selectedMojos={selectedMojos}
-              removeFunction={this.removeUser}
+              onRemove={this.removeUser}
               onSend={this.sendNotification}
               inputText={searchInput}
               handleInputChange={this.updateSearch}

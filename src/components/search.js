@@ -9,7 +9,7 @@ import * as Style from '../containers/Employees/style';
 
 const Search = ({
   selectedMojos,
-  removeFunction,
+  onRemove,
   onSend,
   inputText,
   handleInputChange,
@@ -18,10 +18,7 @@ const Search = ({
     {isPresent(selectedMojos) ? (
       <Style.Search>
         <Style.SearchContainer>
-          <SelectedUsers
-            selectedMojos={selectedMojos}
-            removeFunction={removeFunction}
-          />
+          <SelectedUsers selectedMojos={selectedMojos} onRemove={onRemove} />
           <Style.SearchBar
             placeholder={selectedMojos.length >= 2 ? '' : 'Search'}
             autoCapitalize="words"
@@ -57,7 +54,7 @@ const Search = ({
 
 Search.propTypes = {
   selectedMojos: PropTypes.arrayOf(PropTypes.object).isRequired,
-  removeFunction: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
   onSend: PropTypes.func.isRequired,
   inputText: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired,
