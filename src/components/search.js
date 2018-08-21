@@ -50,7 +50,7 @@ const Search = ({
       </Style.Search>
     )}
     <Style.AddPeople>
-      {isPresent(selectedMojos) ? 'You can add 2 more people' : ''}
+      {isPresent(selectedMojos) ? 'You can add 1 more person' : ''}
     </Style.AddPeople>
   </View>
 );
