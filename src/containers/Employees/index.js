@@ -13,6 +13,7 @@ export default class Employees extends React.Component {
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
+      getParam: PropTypes.func.isRequired,
     }).isRequired,
   };
 
@@ -38,6 +39,9 @@ export default class Employees extends React.Component {
 
   sendNotification = slackID => {
     console.log(slackID);
+    const { navigation } = this.props;
+    const guest = navigation.getParam('guestName');
+    console.log(guest);
   };
 
   updateSearch = value => {
