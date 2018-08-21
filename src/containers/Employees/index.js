@@ -30,7 +30,14 @@ export default class Employees extends React.Component {
   }
 
   selectUser = (slackID, name, image) => {
-    this.setState({ selectedMojos: [{ name, slackID, image }] });
+    const mojo = { name, slackID, image };
+    const { selectedMojos } = this.state;
+    const userAlreadySelected = selectedMojos.find(
+      user => user.slackID === slackID,
+    );
+    if (selectedMojos.length < 2 && !userAlreadySelected) {
+      this.setState({ selectedMojos: selectedMojos.concat(mojo) });
+    }
   };
 
   removeUser = slackID => {
