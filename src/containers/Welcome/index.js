@@ -6,6 +6,7 @@ import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import WavyLines from '../../constants/images/wavy-lines.png';
 import MojoTechIcon from '../../constants/images/mojotechicon.png';
 import { NameInputView } from '../../components/name-input';
+import { isPresent } from '../../lib/util';
 
 const BottomAnchoredBackgroundImage = () => (
   <RootView style={{ top: null }}>
@@ -20,9 +21,11 @@ export default class Welcome extends React.Component {
     }).isRequired,
   };
 
-  handleNextPress = () => {
+  handleNextPress = guestName => {
     const { navigation } = this.props;
-    navigation.navigate('Employees');
+    if (isPresent(guestName)) {
+      navigation.navigate('Employees', { guestName });
+    }
   };
 
   render() {
