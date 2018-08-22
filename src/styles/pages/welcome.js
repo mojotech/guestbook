@@ -32,6 +32,14 @@ export const NameInputText = styled.TextInput`
   font-family: ${fonts.GTAmericaReg};
 `;
 
+export const NameInputLabel = styled.Text`
+  color: ${colors.grey};
+  font-size: ${fontSizes.xsmall};
+  padding-left: 26px;
+  padding-top: 11px;
+  font-family: ${fonts.GTAmericaReg};
+`;
+
 export const Background = styled.Image`
   resize-mode: stretch;
   width: 100%;
