@@ -23,11 +23,18 @@ export class NameInputView extends React.Component {
   handleInputBlur = () => this.setState({ isFocused: false });
 
   render() {
-    const { guestName, handleNextPress, handleChangeNameText } = this.props;
+    const {
+      guestName,
+      offsetOnFocus,
+      handleNextPress,
+      handleChangeNameText,
+    } = this.props;
     const { isFocused } = this.state;
 
     return (
-      <NameInputContainer>
+      <NameInputContainer
+        style={{ marginTop: isFocused ? 105 + offsetOnFocus : 105 }}
+      >
         <TextInputWrapper>
           {isFocused && <NameInputLabel>{this.promptText}</NameInputLabel>}
           <NameInputText
@@ -49,8 +56,13 @@ export class NameInputView extends React.Component {
 
 NameInputView.propTypes = {
   guestName: PropTypes.string.isRequired,
+  offsetOnFocus: PropTypes.number,
   handleNextPress: PropTypes.func.isRequired,
   handleChangeNameText: PropTypes.func.isRequired,
+};
+
+NameInputView.defaultProps = {
+  offsetOnFocus: 0,
 };
 
 export default NameInputView;

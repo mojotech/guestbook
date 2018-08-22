@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Image } from 'react-native';
+import {
+  View,
+  Image,
+  Keyboard,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import { RootView } from '../../components/root-view';
 import { Heading, SubHeading, Background } from '../../styles/pages/welcome';
 import WavyLines from '../../constants/images/wavy-lines.png';
@@ -46,18 +52,27 @@ class Welcome extends React.Component {
     return (
       <RootView>
         <BottomAnchoredBackgroundImage />
-        <View style={{ flex: 1 }}>
-          <BrandingIcon />
-          <Heading>Welcome to MojoTech.</Heading>
-          <SubHeading>
-            Sign in to let your host know you&apos;re here.
-          </SubHeading>
-          <NameInputView
-            guestName={guestName}
-            handleNextPress={this.handleNextPress(guestName)}
-            handleChangeNameText={this.handleChangeNameText}
-          />
-        </View>
+        <KeyboardAvoidingView
+          behavior="position"
+          keyboardVerticalOffset={160}
+          enabled
+        >
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View>
+              <BrandingIcon />
+              <Heading>Welcome to MojoTech.</Heading>
+              <SubHeading>
+                Sign in to let your host know you&apos;re here.
+              </SubHeading>
+              <NameInputView
+                guestName={guestName}
+                handleNextPress={this.handleNextPress(guestName)}
+                handleChangeNameText={this.handleChangeNameText}
+                offsetOnFocus={-30}
+              />
+            </View>
+          </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
       </RootView>
     );
   }
