@@ -34,8 +34,39 @@ const BrandingIcon = () => (
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { guestName: '' };
+
+    this.nameInput = null;
+
+    this.state = {
+      guestName: '',
+      timer: setInterval(this.tick, 1000),
+      counter: 0,
+    };
   }
+
+  componentWillUnmount = () => {
+    const { timer } = this.state;
+    clearInterval(timer);
+  };
+
+  tick = () => {
+    const { counter } = this.state;
+
+    this.setState({ counter: counter + 1 });
+
+    if (counter >= 60) {
+      Keyboard.dismiss();
+      this.nameInput.blur();
+      this.setState({
+        guestName: '',
+        counter: 0,
+      });
+    }
+  };
+
+  setNameInput = inputElement => {
+    this.nameInput = inputElement;
+  };
 
   handleNextPress = guestName => () => {
     const { navigation } = this.props;
@@ -44,7 +75,7 @@ class Welcome extends React.Component {
     }
   };
 
-  handleChangeNameText = text => this.setState({ guestName: text });
+  handleChangeNameText = text => this.setState({ guestName: text, counter: 0 });
 
   render() {
     const { guestName } = this.state;
@@ -69,6 +100,7 @@ class Welcome extends React.Component {
                 handleNextPress={this.handleNextPress(guestName)}
                 handleChangeNameText={this.handleChangeNameText}
                 offsetOnFocus={-30}
+                inputRef={this.setNameInput}
               />
             </View>
           </TouchableWithoutFeedback>

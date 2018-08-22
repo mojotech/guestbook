@@ -28,6 +28,7 @@ export class NameInputView extends React.Component {
       offsetOnFocus,
       handleNextPress,
       handleChangeNameText,
+      inputRef,
     } = this.props;
     const { isFocused } = this.state;
 
@@ -43,6 +44,7 @@ export class NameInputView extends React.Component {
             onChangeText={handleChangeNameText}
             onFocus={this.handleInputFocus}
             onBlur={this.handleInputBlur}
+            innerRef={inputRef}
           />
         </TextInputWrapper>
         <NextButton onPress={handleNextPress}>
@@ -59,6 +61,7 @@ NameInputView.propTypes = {
   offsetOnFocus: PropTypes.number,
   handleNextPress: PropTypes.func.isRequired,
   handleChangeNameText: PropTypes.func.isRequired,
+  inputRef: PropTypes.func.isRequired,
 };
 
 NameInputView.defaultProps = {
