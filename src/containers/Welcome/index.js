@@ -26,14 +26,23 @@ const BrandingIcon = () => (
 );
 
 class Welcome extends React.Component {
-  handleNextPress = guestName => {
+  constructor(props) {
+    super(props);
+    this.state = { guestName: '' };
+  }
+
+  handleNextPress = guestName => () => {
     const { navigation } = this.props;
     if (isPresent(guestName)) {
       navigation.navigate('Employees', { guestName });
     }
   };
 
+  handleChangeNameText = text => this.setState({ guestName: text });
+
   render() {
+    const { guestName } = this.state;
+
     return (
       <RootView>
         <BottomAnchoredBackgroundImage />
@@ -43,7 +52,11 @@ class Welcome extends React.Component {
           <SubHeading>
             Sign in to let your host know you&apos;re here.
           </SubHeading>
-          <NameInputView nextPage={this.handleNextPress} />
+          <NameInputView
+            guestName={guestName}
+            handleNextPress={this.handleNextPress(guestName)}
+            handleChangeNameText={this.handleChangeNameText}
+          />
         </View>
       </RootView>
     );

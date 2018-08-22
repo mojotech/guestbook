@@ -11,23 +11,18 @@ import {
 import ArrowIcon from '../icons/white-arrow.png';
 
 export class NameInputView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: '' };
-  }
-
   render() {
-    const { nextPage } = this.props;
-    const { text } = this.state;
+    const { guestName, handleNextPress, handleChangeNameText } = this.props;
     return (
       <NameInputContainer>
         <TextInputWrapper>
           <NameInputText
+            value={guestName}
             placeholder="What&apos;s your name?"
-            onChangeText={guestName => this.setState({ text: guestName })}
+            onChangeText={handleChangeNameText}
           />
         </TextInputWrapper>
-        <NextButton onPress={() => nextPage(text)}>
+        <NextButton onPress={handleNextPress}>
           <ButtonText>Next</ButtonText>
           <WhiteArrowIcon source={ArrowIcon} />
         </NextButton>
@@ -36,6 +31,10 @@ export class NameInputView extends React.Component {
   }
 }
 
-NameInputView.propTypes = { nextPage: PropTypes.func.isRequired };
+NameInputView.propTypes = {
+  guestName: PropTypes.string.isRequired,
+  handleNextPress: PropTypes.func.isRequired,
+  handleChangeNameText: PropTypes.func.isRequired,
+};
 
 export default NameInputView;
