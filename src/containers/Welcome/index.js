@@ -14,6 +14,17 @@ const BottomAnchoredBackgroundImage = () => (
   </RootView>
 );
 
+const BrandingIcon = () => (
+  <Image
+    style={{
+      alignSelf: 'flex-end',
+      marginRight: 44,
+      marginTop: 42,
+    }}
+    source={MojoTechIcon}
+  />
+);
+
 export default class Welcome extends React.Component {
   static propTypes = {
     navigation: PropTypes.shape({
@@ -33,14 +44,7 @@ export default class Welcome extends React.Component {
       <RootView>
         <BottomAnchoredBackgroundImage />
         <View style={{ flex: 1 }}>
-          <Image
-            style={{
-              alignSelf: 'flex-end',
-              marginRight: 44,
-              marginTop: 42,
-            }}
-            source={MojoTechIcon}
-          />
+          <BrandingIcon />
           <Heading>Welcome to MojoTech.</Heading>
           <SubHeading>
             Sign in to let your host know you&apos;re here.
