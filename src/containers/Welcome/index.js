@@ -25,13 +25,7 @@ const BrandingIcon = () => (
   />
 );
 
-export default class Welcome extends React.Component {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
-    }).isRequired,
-  };
-
+class Welcome extends React.Component {
   handleNextPress = guestName => {
     const { navigation } = this.props;
     if (isPresent(guestName)) {
@@ -55,3 +49,11 @@ export default class Welcome extends React.Component {
     );
   }
 }
+
+Welcome.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+export default Welcome;
